@@ -19,10 +19,10 @@
         const color2 = "lightgray";  // Color oscuro
 
         let imagen;
-        if (rfc === "HHHH") {
-            imagen = "HHHH.png";
+        if (rfc === "123") {
+            imagen = "images/123.png";
         } else {
-            imagen = "MMMM.png";
+            imagen = "images/456.png";
         }
 
         if (anio >= 8) {
@@ -67,7 +67,7 @@
             document.write(`</table>`);
 
         } else {
-            document.write("<p><font size=6 face=arial> Lo sentimos <b>" + nombre + "</b>, no cuenta con los años suficientes para el bono. </font></p>");
+            document.write("<p><font size=6 face=arial> Lo sentimos mucho <b>" + nombre + "</b>, no cuenta con los años suficientes para poder recibir el bono. </font></p>");
             document.write(`
                 <h1>Salario del empleado: ${nombre}</h1>
                 <table border="1">
