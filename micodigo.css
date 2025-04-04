@@ -3,16 +3,17 @@ h1{color: rgb(2, 5, 36);
     font-family: "Boldonse";}
     
 th{color: rgb(47, 2, 2);
-    font-size: 20px;
+    font-size: 25px;
     font-family: "Comic Neue";}
 
 td{color: rgb(47, 2, 2);
-    font-size: 20px;
+    font-size: 25px;
     font-family: "Underdog";
     text-align: center;
 }
 
 table {
+    height: 250px;
     width: 100%; 
       }
 
