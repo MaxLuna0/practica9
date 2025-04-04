@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Underdog&display=swap" rel="stylesheet">
+    <script>
+        let nombre, anio, sueldo, aumento, filas, rfc;
+        nombre = prompt("Ingrese su nombre por favor: ");
+        anio = prompt("Ingrese los años de servicio por favor: ");  
+        sueldo = prompt("Ingrese su sueldo: ");  
+        filas = Number(prompt("Ingrese cuántas filas extras desea: ")); 
+        rfc=prompt("Ingrese su RFC: ");
+
+    
+        const color1 = "lightblue";  // Color claro
+        const color2 = "lightgray";  // Color oscuro
+
+        let imagen;
+        if (rfc === "HHHH") {
+            imagen = "HHHH.PNG";
+        } else {
+            imagen = "MMMM.PNG";
+        }
+
+        if (anio >= 8) {
+            let aumento = sueldo * 1.4;
+
+            document.write("<p><font size=6 face=arial> Estimado <b>" + nombre + "</b>, su sueldo base será: $" + "<b>" + sueldo + "</b>, su sueldo con bono será: $" + "<b>" + aumento + "</b> </font></p>");
+            document.write(`
+                <h1>Salario del empleado: ${nombre}</h1>
+                <table border="1">
+                    <tr>
+                        <th>#</th>
+                        <th>Nombre</th>
+                        <th>Años de Servicio</th>
+                        <th>Sueldo Base</th>
+                        <th>Sueldo con Bono</th>
+                        <th>Imagen</th>
+                    </tr>
+                    <tr bgcolor="lightblue">
+                        <td>1</td>
+                        <td>${nombre}</td>
+                        <td>${anio} años</td>
+                        <td>$${sueldo}</td>
+                        <td>$${aumento}</td>
+                        <td><img src='${imagen}' width="50" height="50"></td>
+                    </tr>
+            `);
+
+            for (let i = 2; i <= filas; i++) {
+                let color = (i % 2 === 0) ? color2 : color1; 
+                document.write(`
+                    <tr bgcolor="${color}">
+                        <td>${i}</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                `);
+            }
+
+            document.write(`</table>`);
+
+        } else {
+            document.write("Lo sentimos <b>" + nombre + "</b>, no cuenta con los años suficientes para el bono.");
+            document.write(`
+                <h1>Salario del empleado: ${nombre}</h1>
+                <table border="1">
+                    <tr>
+                        <th>#</th>
+                        <th>Nombre</th>
+                        <th>Años de Servicio</th>
+                        <th>Sueldo Base</th>
+                        <th>Imagen</th>
+                    </tr>
+                    <tr bgcolor="lightblue">
+                        <td>1</td>
+                        <td>${nombre}</td>
+                        <td>${anio} años</td>
+                        <td>$${sueldo}</td>
+                        <td><img src='${imagen}' width="50" height="50"></td>
+                    </tr>
+            `);
+
+            for (let i = 2; i <= filas; i++) {
+                let color = (i % 2 === 0) ? color2 : color1;  
+                document.write(`
+                    <tr bgcolor="${color}">
+                        <td>${i}</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                `);
+            }
+
+            document.write(`</table>`);
+        }
+    </script>
+    <title>Práctica 9</title>
+</head>
+<link rel="stylesheet" href="micodigo.css">
+<body>
+    
+</body>
+</html>
